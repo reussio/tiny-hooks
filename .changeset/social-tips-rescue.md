@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add a new hok `useBoolean` that manages a boolean state.
+Add a new hook `useBoolean` that manages a boolean state.
