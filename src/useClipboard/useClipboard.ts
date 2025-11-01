@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { useBrowserCapabilities } from "../useBrowserCapabilities";
 import type { UseClipboardOptions, UseClipboardReturn } from "./types.ts";
 
 export function useClipboard(
@@ -6,7 +7,8 @@ export function useClipboard(
 ): UseClipboardReturn {
 	const { resetAfter = 2000, onCopy, onError, readOnInit = false } = options;
 
-	const isSupported = typeof navigator !== "undefined" && !!navigator.clipboard;
+	const caps = useBrowserCapabilities();
+	const isSupported = caps.clipboard;
 
 	const [copied, setCopied] = useState(false);
 	const [error, setError] = useState<string | null>(null);
