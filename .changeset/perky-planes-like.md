@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add a new hok `useStep` to the Library. This hook provides step-based state management.
+Add a new hook `useStep` to the Library. This hook provides step-based state management.
