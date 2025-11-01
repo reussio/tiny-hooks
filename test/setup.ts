@@ -6,3 +6,4 @@ const dom = new JSDOM('<!DOCTYPE html><html lang="en"><body></body></html>', {
 
 globalThis.window = dom.window as never;
 globalThis.document = dom.window.document;
+globalThis.navigator = dom.window.navigator;

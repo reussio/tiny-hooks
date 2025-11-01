@@ -15,7 +15,7 @@ describe("useStep", () => {
 		act(() => {
 			result.current.prev();
 		});
-		expect(result.current.step).toBe(0); // clamp auf minStep
+		expect(result.current.step).toBe(0);
 
 		act(() => {
 			result.current.setStep(10);
