@@ -50,4 +50,51 @@ describe("useToggle", () => {
 		});
 		expect(result.current.value).toBe("A");
 	});
+
+	it("should toggle objects by reference", () => {
+		const obj1 = { x: 1 };
+		const obj2 = { x: 2 };
+		const { result } = renderHook(() => useToggle(obj1, obj2));
+
+		expect(result.current.value).toBe(obj1);
+
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.value).toBe(obj2);
+
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.value).toBe(obj1);
+	});
+
+	it("should toggle arrays by reference", () => {
+		const arr1 = [1, 2];
+		const arr2 = [3, 4];
+		const { result } = renderHook(() => useToggle(arr1, arr2));
+
+		expect(result.current.value).toBe(arr1);
+
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.value).toBe(arr2);
+	});
+
+	it("should handle NaN correctly", () => {
+		const { result } = renderHook(() => useToggle(NaN, 1));
+
+		expect(Number.isNaN(result.current.value)).toBe(true);
+
+		act(() => {
+			result.current.toggle();
+		});
+		expect(result.current.value).toBe(1);
+
+		act(() => {
+			result.current.toggle();
+		});
+		expect(Number.isNaN(result.current.value)).toBe(true);
+	});
 });

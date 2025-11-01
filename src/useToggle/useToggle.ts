@@ -7,13 +7,13 @@ export function useToggle<T>(
 ): UseToggleReturn<T> {
 	const [value, setValue] = useState<T>(defaultValue);
 
-	const toggle: () => void = useCallback((): void => {
+	const toggle = useCallback(() => {
 		setValue((prev) =>
-			prev === defaultValue ? alternativeValue : defaultValue,
+			Object.is(prev, defaultValue) ? alternativeValue : defaultValue,
 		);
 	}, [defaultValue, alternativeValue]);
 
-	const set: (val: T) => void = useCallback((val: T): void => {
+	const set = useCallback((val: T) => {
 		setValue(val);
 	}, []);
 
