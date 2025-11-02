@@ -6,6 +6,7 @@ export { useDebounce } from "./useDebounce";
 export { useIsClient } from "./useIsClient";
 export { useIsMounted } from "./useIsMounted";
 export { useLocalStorage } from "./useLocalStorage";
+export { useScrollProgress } from "./useScrollProgress";
 export { useSessionStorage } from "./useSessionStorage";
 export { useStep } from "./useStep";
 export { useThrottle } from "./useThrottle";

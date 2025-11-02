@@ -9,3 +9,5 @@ globalThis.document = dom.window.document;
 globalThis.navigator = dom.window.navigator;
 globalThis.localStorage = dom.window.localStorage;
 globalThis.sessionStorage = dom.window.sessionStorage;
+globalThis.Event = dom.window.Event;
+globalThis.HTMLElement = dom.window.HTMLElement;
