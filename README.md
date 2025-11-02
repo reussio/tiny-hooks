@@ -8,7 +8,6 @@ Designed for clean, typed, and efficient React development.
 ![TypeScript](https://img.shields.io/badge/TypeScript-Yes-blue)
 ![License](https://img.shields.io/npm/l/tiny-hooks)
 
----
 
 ## 🚀 Features  
 ✅ Over **20 hooks** for common tasks    
@@ -17,7 +16,6 @@ Designed for clean, typed, and efficient React development.
 ✅ Easy to integrate in any React project    
 ✅ Supports **React≥16.8**
 
----
 
 ## ⚙️ Installation  
 
@@ -31,7 +29,6 @@ yarn add tiny-hooks
 npm install tiny-hooks
 ```
 
----
 
 ## 💡 Available Hooks
 
@@ -67,8 +64,6 @@ npm install tiny-hooks
 - `useThrottle`
 
 
----
-
 ## 🤝 Contributing  
 1. Fork this repository  
 2. Clone your fork locally: `git clone git@github.com:<your-username>/tiny-hooks.git`  
@@ -76,17 +71,14 @@ npm install tiny-hooks
 4. Commit your changes and push the branch to your fork.
 5. Open a Pull Request against the `main` branch of this repository.
 
----
 
 ## 📜 Code of Conduct  
 Please follow our [Code of Conduct](CODE_OF_CONDUCT.MD).  
 
----
 
 ## 🌍 Repository  
 - **GitHub Repo**: https://github.com/reussio/tiny-hooks
 
----
 
 ## 📜 License
 This project is licensed under the **MIT** License.  
