@@ -4,5 +4,6 @@ export { useClipboard } from "./useClipboard";
 export { useCounter } from "./useCounter";
 export { useDebounce } from "./useDebounce";
 export { useIsClient } from "./useIsClient";
+export { useIsMounted } from "./useIsMounted";
 export { useStep } from "./useStep";
 export { useToggle } from "./useToggle";
