@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add `useOnlineStatus` hook
+Add new `useOnlineStatus` hook
