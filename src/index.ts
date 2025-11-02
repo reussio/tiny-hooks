@@ -15,5 +15,6 @@ export { usePrevious } from "./usePrevious";
 export { useScrollProgress } from "./useScrollProgress";
 export { useSessionStorage } from "./useSessionStorage";
 export { useStep } from "./useStep";
+export { useStopwatch } from "./useStopwatch";
 export { useThrottle } from "./useThrottle";
 export { useToggle } from "./useToggle";
