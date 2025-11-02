@@ -1,4 +1,5 @@
 import { type RefObject, useEffect } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseClickOutsideOptions } from "./types.ts";
 
 export function useClickOutside<T extends HTMLElement = HTMLElement>(
@@ -6,15 +7,17 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(
 	callback: () => void,
 	options: UseClickOutsideOptions = {},
 ) {
+	assertClient();
+
 	const { eventType = ["mousedown", "touchstart"] } = options;
 
 	useEffect(() => {
 		const events = Array.isArray(eventType) ? eventType : [eventType];
 
-		function handleClick(event: MouseEvent | TouchEvent) {
-			if (!ref.current || ref.current.contains(event.target as Node)) return;
+		const handleClick = (event: MouseEvent | TouchEvent) => {
+			if (ref.current?.contains(event.target as Node)) return;
 			callback();
-		}
+		};
 
 		events.forEach((ev) => {
 			document.addEventListener(ev, handleClick);

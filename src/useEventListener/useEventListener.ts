@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 
 export function useEventListener<
 	K extends keyof HTMLElementEventMap,
@@ -9,6 +10,7 @@ export function useEventListener<
 	target?: T,
 	options?: boolean | AddEventListenerOptions,
 ): void {
+	assertClient();
 	const savedHandler = useRef(handler);
 
 	useEffect(() => {
@@ -18,14 +20,11 @@ export function useEventListener<
 	useEffect(() => {
 		const targetElement: EventTarget = target ?? window;
 
-		if (!targetElement?.addEventListener) return;
-
 		const eventListener = (event: Event) => {
 			savedHandler.current(event as HTMLElementEventMap[K]);
 		};
 
 		targetElement.addEventListener(eventName, eventListener, options);
-
 		return () => {
 			targetElement.removeEventListener(eventName, eventListener, options);
 		};

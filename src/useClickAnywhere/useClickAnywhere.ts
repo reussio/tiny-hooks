@@ -1,16 +1,16 @@
 import { useEffect } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseClickAnywhereOptions } from "./types.ts";
 
 export function useClickAnywhere(
 	onClick: () => void,
 	options: UseClickAnywhereOptions = {},
 ) {
+	assertClient();
+
 	const { eventType = "mousedown" } = options;
 
 	useEffect(() => {
-		if (typeof document === "undefined" || typeof onClick !== "function")
-			return;
-
 		document.addEventListener(eventType, onClick);
 
 		return () => {

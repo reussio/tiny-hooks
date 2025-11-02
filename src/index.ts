@@ -12,6 +12,7 @@ export { useIsMounted } from "./useIsMounted";
 export { useLocalStorage } from "./useLocalStorage";
 export { useOnlineStatus } from "./useOnlineStatus";
 export { usePrevious } from "./usePrevious";
+export { useRedirect } from "./useRedirect";
 export { useScrollProgress } from "./useScrollProgress";
 export { useSessionStorage } from "./useSessionStorage";
 export { useStep } from "./useStep";
