@@ -5,5 +5,6 @@ export { useCounter } from "./useCounter";
 export { useDebounce } from "./useDebounce";
 export { useIsClient } from "./useIsClient";
 export { useIsMounted } from "./useIsMounted";
+export { useLocalStorage } from "./useLocalStorage";
 export { useStep } from "./useStep";
 export { useToggle } from "./useToggle";
