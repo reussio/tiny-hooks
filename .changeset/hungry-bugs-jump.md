@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add hook `useClickAnywhere`
+Add new `useClickAnywhere` hook

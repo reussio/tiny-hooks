@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add new hook `useStopwatch`
+Add new `useStopwatch` hook

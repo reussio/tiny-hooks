@@ -2,4 +2,4 @@
 "tiny-hooks": minor
 ---
 
-Add useThrottle hook
+Add new `useThrottle` hook
