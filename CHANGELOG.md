@@ -1,5 +1,11 @@
 # tiny-hooks
 
+## 1.0.1
+
+### Patch Changes
+
+- 4c69efd: Correct package exports
+
 ## 1.0.0
 
 ### Minor Changes

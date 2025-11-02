@@ -1,6 +1,6 @@
 {
 	"name": "tiny-hooks",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A tiny collection of reusable React hooks written in TypeScript for modern web applications.",
 	"license": "MIT",
 	"type": "module",
