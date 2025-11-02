@@ -5,6 +5,7 @@ export { useClickOutside } from "./useClickOutside";
 export { useClipboard } from "./useClipboard";
 export { useCounter } from "./useCounter";
 export { useDebounce } from "./useDebounce";
+export { useEventListener } from "./useEventListener";
 export { useHover } from "./useHover";
 export { useIsClient } from "./useIsClient";
 export { useIsMounted } from "./useIsMounted";
