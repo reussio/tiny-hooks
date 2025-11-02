@@ -12,3 +12,4 @@ globalThis.sessionStorage = dom.window.sessionStorage;
 globalThis.Event = dom.window.Event;
 globalThis.HTMLElement = dom.window.HTMLElement;
 globalThis.navigator = dom.window.navigator;
+globalThis.MouseEvent = dom.window.MouseEvent;
