@@ -8,4 +8,5 @@ export { useIsMounted } from "./useIsMounted";
 export { useLocalStorage } from "./useLocalStorage";
 export { useSessionStorage } from "./useSessionStorage";
 export { useStep } from "./useStep";
+export { useThrottle } from "./useThrottle";
 export { useToggle } from "./useToggle";
