@@ -26,4 +26,17 @@ describe("useClickAnywhere", () => {
 		fireEvent.mouseDown(document.body);
 		expect(callback).not.toHaveBeenCalled();
 	});
+
+	it("should respect the eventType option", () => {
+		const callback = vi.fn();
+
+		renderHook(() => useClickAnywhere(callback, { eventType: "click" }));
+
+		fireEvent.click(document.body);
+		fireEvent.click(document.documentElement);
+		fireEvent.mouseDown(document.documentElement);
+		fireEvent.mouseUp(document.documentElement);
+
+		expect(callback).toHaveBeenCalledTimes(2);
+	});
 });
