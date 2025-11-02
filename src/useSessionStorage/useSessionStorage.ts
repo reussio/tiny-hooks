@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type {
 	UseSessionStorageOptions,
 	UseSessionStorageReturn,
@@ -9,13 +10,12 @@ export function useSessionStorage<T>(
 	defaultValue: T,
 	options: UseSessionStorageOptions = {},
 ): UseSessionStorageReturn<T> {
+	assertClient();
 	const { onError } = options;
 
 	const readValue = useCallback((): T => {
-		if (typeof window === "undefined") return defaultValue;
-
 		try {
-			const item = window.sessionStorage.getItem(key);
+			const item = sessionStorage.getItem(key);
 			return item !== null ? JSON.parse(item) : defaultValue;
 		} catch (err) {
 			onError?.(err as Error);
@@ -29,9 +29,7 @@ export function useSessionStorage<T>(
 		(value: T) => {
 			try {
 				setStoredValue(value);
-				if (typeof window !== "undefined") {
-					window.sessionStorage.setItem(key, JSON.stringify(value));
-				}
+				sessionStorage.setItem(key, JSON.stringify(value));
 			} catch (err) {
 				onError?.(err as Error);
 			}
@@ -41,9 +39,7 @@ export function useSessionStorage<T>(
 
 	const remove = useCallback(() => {
 		try {
-			if (typeof window !== "undefined") {
-				window.sessionStorage.removeItem(key);
-			}
+			sessionStorage.removeItem(key);
 			setStoredValue(defaultValue);
 		} catch (err) {
 			onError?.(err as Error);
@@ -51,12 +47,10 @@ export function useSessionStorage<T>(
 	}, [key, defaultValue, onError]);
 
 	useEffect(() => {
-		if (typeof window === "undefined") return;
-
 		const handleStorage = (event: StorageEvent) => {
-			if (event.key === key && event.storageArea === window.sessionStorage) {
+			if (event.key === key && event.storageArea === sessionStorage) {
 				try {
-					const item = window.sessionStorage.getItem(key);
+					const item = sessionStorage.getItem(key);
 					setStoredValue(item !== null ? JSON.parse(item) : defaultValue);
 				} catch (err) {
 					onError?.(err as Error);

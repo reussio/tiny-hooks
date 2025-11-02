@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { useBrowserCapabilities } from "../useBrowserCapabilities";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseClipboardOptions, UseClipboardReturn } from "./types.ts";
 
 export function useClipboard(
 	options: UseClipboardOptions = {},
 ): UseClipboardReturn {
+	assertClient();
+
 	const { resetAfter = 2000, onCopy, onError, readOnInit = false } = options;
 
 	const caps = useBrowserCapabilities();

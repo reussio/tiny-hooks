@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { BrowserCapabilities } from "./types.ts";
 
 export function useBrowserCapabilities(): BrowserCapabilities {
+	assertClient();
 	const [capabilities, setCapabilities] = useState<BrowserCapabilities>({
 		clipboard: false,
 		geolocation: false,
@@ -18,20 +20,17 @@ export function useBrowserCapabilities(): BrowserCapabilities {
 
 	useEffect(() => {
 		setCapabilities({
-			clipboard: typeof navigator !== "undefined" && !!navigator.clipboard,
-			geolocation: typeof navigator !== "undefined" && !!navigator.geolocation,
-			localStorage: typeof window !== "undefined" && !!window.localStorage,
-			sessionStorage: typeof window !== "undefined" && !!window.sessionStorage,
-			notifications: typeof window !== "undefined" && !!window.Notification,
-			serviceWorker:
-				typeof navigator !== "undefined" && !!navigator.serviceWorker?.register,
-			fetch: typeof window !== "undefined" && !!window.fetch,
-			webSocket: typeof window !== "undefined" && !!window.WebSocket,
-			fileReader: typeof window !== "undefined" && !!window.FileReader,
-			online: typeof navigator !== "undefined" && "onLine" in navigator,
-			mediaDevices:
-				typeof navigator !== "undefined" &&
-				!!navigator.mediaDevices?.getUserMedia,
+			clipboard: !!navigator.clipboard,
+			geolocation: !!navigator.geolocation,
+			localStorage: !!window.localStorage,
+			sessionStorage: !!window.sessionStorage,
+			notifications: !!window.Notification,
+			serviceWorker: !!navigator.serviceWorker?.register,
+			fetch: !!window.fetch,
+			webSocket: !!window.WebSocket,
+			fileReader: !!window.FileReader,
+			online: "onLine" in navigator,
+			mediaDevices: !!navigator.mediaDevices?.getUserMedia,
 		});
 	}, []);
 

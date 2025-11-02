@@ -34,15 +34,4 @@ describe("useOnlineStatus", () => {
 
 		expect(result.current).toBe(true);
 	});
-
-	it("should return undefined in SSR environment", () => {
-		const originalNavigator = globalThis.navigator;
-		// @ts-expect-error
-		globalThis.navigator = undefined;
-
-		const { result } = renderHook(() => useOnlineStatus());
-		expect(result.current).toBeUndefined();
-
-		globalThis.navigator = originalNavigator;
-	});
 });

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseLocalStorageOptions, UseLocalStorageReturn } from "./types";
 
 export function useLocalStorage<T>(
@@ -6,11 +7,11 @@ export function useLocalStorage<T>(
 	defaultValue: T,
 	options: UseLocalStorageOptions = {},
 ): UseLocalStorageReturn<T> {
+	assertClient();
 	const { onError } = options;
 
 	const [storedValue, setStoredValue] = useState<T>(() => {
 		try {
-			if (typeof window === "undefined") return defaultValue;
 			const item = window.localStorage.getItem(key);
 			return item !== null ? JSON.parse(item) : defaultValue;
 		} catch (err) {
@@ -23,9 +24,7 @@ export function useLocalStorage<T>(
 		(value: T) => {
 			try {
 				setStoredValue(value);
-				if (typeof window !== "undefined") {
-					window.localStorage.setItem(key, JSON.stringify(value));
-				}
+				window.localStorage.setItem(key, JSON.stringify(value));
 			} catch (err) {
 				onError?.(err as Error);
 			}
@@ -35,9 +34,7 @@ export function useLocalStorage<T>(
 
 	const remove = useCallback(() => {
 		try {
-			if (typeof window !== "undefined") {
-				window.localStorage.removeItem(key);
-			}
+			window.localStorage.removeItem(key);
 			setStoredValue(defaultValue);
 		} catch (err) {
 			onError?.(err as Error);
@@ -45,8 +42,6 @@ export function useLocalStorage<T>(
 	}, [key, defaultValue, onError]);
 
 	useEffect(() => {
-		if (typeof window === "undefined") return;
-
 		const handleStorage = (event: StorageEvent) => {
 			if (event.key === key) {
 				try {

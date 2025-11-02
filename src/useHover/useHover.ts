@@ -1,9 +1,11 @@
 import { useCallback, useRef, useState } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseHoverReturn } from "./types";
 
 export function useHover<
 	T extends HTMLElement = HTMLElement,
 >(): UseHoverReturn<T> {
+	assertClient();
 	const [isHovered, setIsHovered] = useState(false);
 	const nodeRef = useRef<T | null>(null);
 

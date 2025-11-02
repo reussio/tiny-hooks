@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useThrottle } from "../useThrottle";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UseScrollProgressOptions } from "./types.ts";
 
 export function useScrollProgress<T extends HTMLElement = HTMLElement>(
 	options: UseScrollProgressOptions<T> = {},
 ): number {
+	assertClient();
 	const { percent = false, ref, throttle = 0 } = options;
 	const [progress, setProgress] = useState(0);
 
