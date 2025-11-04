@@ -3,6 +3,7 @@ export { useBrowserCapabilities } from "./useBrowserCapabilities";
 export { useClickAnywhere } from "./useClickAnywhere";
 export { useClickOutside } from "./useClickOutside";
 export { useClipboard } from "./useClipboard";
+export { useCookie } from "./useCookie";
 export { useCounter } from "./useCounter";
 export { useDebounce } from "./useDebounce";
 export { useEventListener } from "./useEventListener";

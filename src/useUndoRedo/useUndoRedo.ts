@@ -36,6 +36,7 @@ export function useUndoRedo<T>(
 
 		setPast((prevPast) => {
 			const newPast = [...prevPast];
+			// biome-ignore lint/style/noNonNullAssertion: safe here
 			const previous = newPast.pop()!;
 			setFuture((prev) => [present, ...prev]);
 			setPresent(previous);
@@ -50,7 +51,9 @@ export function useUndoRedo<T>(
 
 		setFuture((prevFuture) => {
 			const newFuture = [...prevFuture];
+			// biome-ignore lint/style/noNonNullAssertion: safe here
 			const next = newFuture.shift()!;
+			if (next === undefined) return prevFuture;
 			setPast((prev) => [...prev, present]);
 			setPresent(next);
 			onRedo?.(next);
