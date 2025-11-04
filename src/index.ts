@@ -8,6 +8,7 @@ export { useCounter } from "./useCounter";
 export { useDebounce } from "./useDebounce";
 export { useEventListener } from "./useEventListener";
 export { useHover } from "./useHover";
+export { useIdle } from "./useIdle";
 export { useIsClient } from "./useIsClient";
 export { useIsMounted } from "./useIsMounted";
 export { useLocalStorage } from "./useLocalStorage";
