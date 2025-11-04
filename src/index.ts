@@ -19,3 +19,4 @@ export { useStep } from "./useStep";
 export { useStopwatch } from "./useStopwatch";
 export { useThrottle } from "./useThrottle";
 export { useToggle } from "./useToggle";
+export { useUndoRedo } from "./useUndoRedo";
