@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { assertClient } from "../utils/assertClient.ts";
 import type { UsePingOptions, UsePingReturn } from "./types.ts";
 
 export function usePing(
 	url: string,
 	options: UsePingOptions = {},
 ): UsePingReturn {
+	assertClient();
 	const {
 		interval = 5000,
 		timeout = 5000,
