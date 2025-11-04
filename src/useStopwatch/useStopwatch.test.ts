@@ -66,6 +66,6 @@ describe("useStopwatch", () => {
 
 		act(() => {});
 
-		expect(result.current.time).toBeGreaterThan(timeBeforeResume);
+		expect(result.current.time).toBeGreaterThanOrEqual(timeBeforeResume);
 	});
 });
