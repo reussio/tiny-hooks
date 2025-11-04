@@ -12,6 +12,7 @@ export { useIsClient } from "./useIsClient";
 export { useIsMounted } from "./useIsMounted";
 export { useLocalStorage } from "./useLocalStorage";
 export { useOnlineStatus } from "./useOnlineStatus";
+export { usePing } from "./usePing";
 export { usePrevious } from "./usePrevious";
 export { useRedirect } from "./useRedirect";
 export { useScrollProgress } from "./useScrollProgress";
