@@ -1,3 +1,4 @@
+export { useBatteryStatus } from "./useBatteryStatus";
 export { useBoolean } from "./useBoolean";
 export { useBrowserCapabilities } from "./useBrowserCapabilities";
 export { useClickAnywhere } from "./useClickAnywhere";
