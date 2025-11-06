@@ -1,5 +1,16 @@
 # tiny-hooks
 
+## 1.1.0
+
+### Minor Changes
+
+- d5121e4: Add new `useConnectionType` hook
+- 85859c7: Add new `useBatteryStatus` hook
+- 73a9bff: Add new `useIdle` hook
+- d70c7b5: Add new `useUndoRedo` hook
+- d2b3929: Add new `usePing` hook
+- ab613b3: Add new `useCookie` hook
+
 ## 1.0.1
 
 ### Patch Changes
