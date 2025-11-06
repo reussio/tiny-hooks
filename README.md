@@ -66,7 +66,7 @@ npm install tiny-hooks
 
 ## 🤝 Contributing  
 1. Fork this repository  
-2. Clone your fork locally: `git clone git@github.com:<your-username>/tiny-hooks.git`  
+2. Clone your fork locally: `git clone git@github.com:reussio/tiny-hooks.git`  
 3. Make your improvements or fixes.
 4. Commit your changes and push the branch to your fork.
 5. Open a Pull Request against the `main` branch of this repository.
