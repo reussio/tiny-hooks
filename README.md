@@ -33,35 +33,46 @@ npm install tiny-hooks
 ## 💡 Available Hooks
 
 ### ⚡ State Hooks
-- `useBoolean`
-- `useCounter`
-- `useStep`
-- `useToggle`
 
-### 💾 Storage Hooks
-- `useLocalStorage`
-- `useSessionStorage`
-- `useClipboard`
+* `useBoolean`
+* `useCounter`
+* `useStep`
+* `useToggle`
+* `useUndoRedo`
 
-### 🖱️ Event & Interaction Hooks
-- `useClickAnywhere`
-- `useClickOutside`
-- `useEventListener`
-- `useHover`
-- `useScrollProgress`
+### 💿 Storage Hooks
 
-### 🌐 Browser & Client Hooks
-- `useIsClient`
-- `useIsMounted`
-- `useBrowserCapabilities`
-- `useOnlineStatus`
-- `useRedirect`
+* `useLocalStorage`
+* `useSessionStorage`
+* `useCookie`
+* `useClipboard`
+
+### 🔁️ Event & Interaction Hooks
+
+* `useClickAnywhere`
+* `useClickOutside`
+* `useEventListener`
+* `useHover`
+* `useScrollProgress`
+
+### 🌐 Browser & Environment Hooks
+
+* `useIsClient`
+* `useIsMounted`
+* `useBrowserCapabilities`
+* `useOnlineStatus`
+* `useConnectionType`
+* `usePing`
+* `useRedirect`
+* `useIdle`
+* `useBatteryStatus`
 
 ### ⏱️ Utility Hooks
-- `useDebounce`
-- `usePrevious`
-- `useStopwatch`
-- `useThrottle`
+
+* `useDebounce`
+* `useThrottle`
+* `usePrevious`
+* `useStopwatch`
 
 
 ## 🤝 Contributing  
@@ -83,3 +94,5 @@ Please follow our [Code of Conduct](CODE_OF_CONDUCT.MD).
 ## 📜 License
 This project is licensed under the **MIT** License.  
 See the [LICENSE](./LICENSE) file for more details.
+
+
